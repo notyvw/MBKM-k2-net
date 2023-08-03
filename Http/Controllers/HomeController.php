@@ -23,10 +23,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function guest(){
+        $contact = Contact::first();
+        return view('dashboard', compact('contact'));
+    }
+
     public function index()
     {
         $contact = Contact::first();
-        return view('dashboard', compact('contact'));
+        return view('home', compact('contact'));
     }
 
     /**
